@@ -340,14 +340,3 @@ hermes -s internet
         └── python-backend.zh-CN.md
 ```
 
-## 后续可扩展方向
-
-- 针对不同语言/框架的变体
-- onboarding 审计清单
-- flaky test 治理手册
-- 文档新鲜度自动化
-- PR / Review 延迟评分卡
-
-## License
-
-MIT

@@ -1,14 +1,37 @@
 # Internet Programmer Painkiller
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Hermes Skill](https://img.shields.io/badge/Hermes-Skill-6f42c1)](./skill/internet-programmer-painkiller/SKILL.md)
+[![Chinese README](https://img.shields.io/badge/README-中文-red)](./README.zh-CN.md)
+[![Last Commit](https://img.shields.io/github/last-commit/MengYanChenHub/internet-programmer-skill)](https://github.com/MengYanChenHub/internet-programmer-skill/commits/main)
+
 English | [简体中文](./README.zh-CN.md)
 
 A research-backed Hermes skill for programmers who are losing time to tool sprawl, slow feedback loops, invisible runtime state, stale docs, and constant context switching.
 
-This repository converts those pain points into a reusable operating playbook:
+This repository turns those pain points into a reusable operating playbook:
 - a Hermes skill
 - practical templates
 - copy-paste examples
+- framework-specific scenarios
 - research references
+
+## Table of Contents
+
+- [Why this exists](#why-this-exists)
+- [What is inside](#what-is-inside)
+- [Who this is for](#who-this-is-for)
+- [What the skill does](#what-the-skill-does)
+- [Quick start](#quick-start)
+- [How to use this inside Hermes](#how-to-use-this-inside-hermes)
+- [Framework-specific examples](#framework-specific-examples)
+- [Recommended workflow](#recommended-workflow)
+- [Example use cases](#example-use-cases)
+- [Design principles](#design-principles)
+- [Research basis](#research-basis)
+- [Repository structure](#repository-structure)
+- [Contributing ideas](#contributing-ideas)
+- [License](#license)
 
 ## Why this exists
 
@@ -42,6 +65,9 @@ This repo turns those patterns into one reusable skill: `internet-programmer-pai
 ### Examples
 - `examples/example-prompts.md` — ready-to-use prompts for Hermes
 - `examples/sample-output.md` — example diagnosis and improvement plan
+- `examples/frameworks/nextjs.md` — Next.js setup and debugging friction examples
+- `examples/frameworks/python-backend.md` — Python backend reliability and observability examples
+- `examples/frameworks/ci-cd.md` — CI/CD delay and flaky pipeline examples
 
 ## Who this is for
 
@@ -127,6 +153,31 @@ A good response from Hermes should include:
 2. immediate shortest-path fix
 3. system fix to prevent recurrence
 4. what to measure next
+
+### 5. Useful Hermes commands
+```bash
+hermes skills list
+hermes -s internet-programmer-painkiller
+```
+
+```text
+/skill internet-programmer-painkiller
+/help
+```
+
+## Framework-specific examples
+
+If you want a faster starting point, open one of these:
+- `examples/frameworks/nextjs.md`
+- `examples/frameworks/python-backend.md`
+- `examples/frameworks/ci-cd.md`
+
+These files contain:
+- typical pain buckets
+- example Hermes prompts
+- likely shortest-path fixes
+- useful prevention artifacts
+- suggested metrics
 
 ## Recommended workflow
 
@@ -217,7 +268,11 @@ See `research/sources.md` for links and synthesis.
 │   └── incident-to-runbook.md
 └── examples/
     ├── example-prompts.md
-    └── sample-output.md
+    ├── sample-output.md
+    └── frameworks/
+        ├── ci-cd.md
+        ├── nextjs.md
+        └── python-backend.md
 ```
 
 ## Contributing ideas

@@ -1,5 +1,10 @@
 # Internet Programmer Painkiller
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Hermes Skill](https://img.shields.io/badge/Hermes-Skill-6f42c1)](./skill/internet-programmer-painkiller/SKILL.md)
+[![English README](https://img.shields.io/badge/README-English-blue)](./README.md)
+[![Last Commit](https://img.shields.io/github/last-commit/MengYanChenHub/internet-programmer-skill)](https://github.com/MengYanChenHub/internet-programmer-skill/commits/main)
+
 [English](./README.md) | 简体中文
 
 一个面向互联网程序员的、基于研究总结的 Hermes Skill。
@@ -9,7 +14,25 @@
 - 一个 Hermes Skill
 - 一组实用模板
 - 一套可直接复制的示例提示词
+- 一组框架场景示例
 - 一份研究来源汇总
+
+## 目录
+
+- [为什么要做这个 Skill](#为什么要做这个-skill)
+- [仓库内容](#仓库内容)
+- [适合谁用](#适合谁用)
+- [这个 Skill 会做什么](#这个-skill-会做什么)
+- [快速开始](#快速开始)
+- [如何在 Hermes 中使用](#如何在-hermes-中使用)
+- [框架示例](#框架示例)
+- [推荐使用流程](#推荐使用流程)
+- [示例场景](#示例场景)
+- [设计原则](#设计原则)
+- [研究基础](#研究基础)
+- [仓库结构](#仓库结构)
+- [后续可扩展方向](#后续可扩展方向)
+- [License](#license)
 
 ## 为什么要做这个 Skill
 
@@ -42,6 +65,9 @@
 ### 示例
 - `examples/example-prompts.md` — 可以直接给 Hermes 使用的提示词
 - `examples/sample-output.md` — 一个完整输出示例
+- `examples/frameworks/nextjs.md` — Next.js 常见摩擦与处理方式
+- `examples/frameworks/python-backend.md` — Python 后端调试与可观测性示例
+- `examples/frameworks/ci-cd.md` — CI/CD 慢、脆、反复失败的处理示例
 
 ## 适合谁用
 
@@ -127,6 +153,31 @@ Hermes 的输出最好包含：
 2. 当前最短路径修复动作
 3. 防止复发的 system fix
 4. 下一步要量化的指标
+
+### 5. 常用 Hermes 命令
+```bash
+hermes skills list
+hermes -s internet-programmer-painkiller
+```
+
+```text
+/skill internet-programmer-painkiller
+/help
+```
+
+## 框架示例
+
+如果你想直接看更贴近实际项目的案例，可以打开：
+- `examples/frameworks/nextjs.md`
+- `examples/frameworks/python-backend.md`
+- `examples/frameworks/ci-cd.md`
+
+这些文件里包含：
+- 典型 pain buckets
+- 可直接喂给 Hermes 的 prompt
+- 常见 shortest-path fix
+- 适合沉淀的 prevention artifact
+- 建议追踪的指标
 
 ## 推荐使用流程
 
@@ -217,7 +268,11 @@ Hermes 的输出最好包含：
 │   └── incident-to-runbook.md
 └── examples/
     ├── example-prompts.md
-    └── sample-output.md
+    ├── sample-output.md
+    └── frameworks/
+        ├── ci-cd.md
+        ├── nextjs.md
+        └── python-backend.md
 ```
 
 ## 后续可扩展方向

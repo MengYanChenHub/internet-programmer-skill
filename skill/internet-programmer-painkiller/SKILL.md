@@ -221,3 +221,12 @@ When applying this skill, respond with:
 - `templates/friction-log.md`
 - `templates/debugging-runbook.md`
 - `templates/golden-path-checklist.md`
+- `templates/incident-to-runbook.md`
+- `templates/ci-friction-checklist.md`
+
+## Example invocation
+
+Use this skill with prompts like:
+- "Use internet-programmer-painkiller. My local environment only works on one machine. Diagnose the pain buckets and give me the shortest-path fix."
+- "Use internet-programmer-painkiller. CI is slow and flaky. Rank the top friction points and propose the smallest high-leverage fixes."
+- "Use internet-programmer-painkiller. I keep guessing during debugging because the runtime state is unclear. Give me the immediate fix, system fix, and what to measure."

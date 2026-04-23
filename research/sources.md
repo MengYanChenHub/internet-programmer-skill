@@ -105,3 +105,13 @@ A useful skill for internet programmers should not just give coding advice. It s
 - shorten the loop
 - create a minimal prevention artifact
 - verify measurable improvement
+
+## How to read this research
+
+This source pack is intentionally practical.
+Use it to justify improvements such as:
+- one-command setup
+- faster local smoke checks
+- structured logs and request IDs
+- example-first troubleshooting docs
+- earlier and smaller CI/review guardrails

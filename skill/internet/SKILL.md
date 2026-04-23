@@ -100,10 +100,18 @@ When applying this skill, respond with:
 
 ## Discoverability in Hermes
 
-Install this folder alongside `skill/internet-programmer-painkiller/` if you want `/internet` to show an obvious skill suggestion in Hermes.
+Install this folder alongside `skill/internet-programmer-painkiller/` if you want `/internet` to surface an obvious fast-entry skill in Hermes.
+
+## Fast prompt wording for `/internet`
+
+Good short prompts:
+- "Use internet. Diagnose the friction, give me one shortest-path fix for today, one prevention artifact, and what to measure next."
+- "Use internet. I have a local setup problem. Classify the pain bucket, stop the guessing, and give me the fastest fix."
+- "Use internet. CI is slow and flaky. Rank the friction points and tell me the smallest high-leverage fix."
 
 ## Example invocation
 
+- "Use internet. Diagnose the friction, give me one shortest-path fix for today, one prevention artifact, and what to measure next."
 - "Use internet. My local environment only works on one machine. Diagnose the pain buckets and give me the shortest-path fix."
 - "Use internet. CI is slow and flaky. Rank the top friction points and propose the smallest high-leverage fixes."
 - "Use internet. I keep guessing during debugging because the runtime state is unclear. Give me the immediate fix, system fix, and what to measure."

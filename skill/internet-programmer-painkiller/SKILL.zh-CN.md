@@ -219,11 +219,27 @@ metadata:
 
 ## 推荐配套工件
 
-- `templates/friction-log.md`
-- `templates/debugging-runbook.md`
-- `templates/golden-path-checklist.md`
-- `templates/incident-to-runbook.md`
-- `templates/ci-friction-checklist.md`
+- `references/templates/friction-log.md`
+- `references/templates/debugging-runbook.md`
+- `references/templates/golden-path-checklist.md`
+- `references/templates/incident-to-runbook.md`
+- `references/templates/ci-friction-checklist.md`
+
+## 这个 Skill 自带的 linked files
+
+这个 Skill 已把配套文件放进 skill 目录下，Hermes 可以直接把它们作为 linked files 展示出来：
+- `references/docs/screenshots.md`
+- `references/docs/github-description.md`
+- `references/examples/example-prompts.md`
+- `references/examples/sample-output.md`
+- `references/examples/frameworks/nextjs.md`
+- `references/examples/frameworks/python-backend.md`
+- `references/examples/frameworks/ci-cd.md`
+- `references/research/sources.md`
+- `references/templates/*.md`
+- `references/assets/screenshots/*.png`
+
+你可以用 `skill_view(name="internet-programmer-painkiller", file_path="...")` 直接打开它们。
 
 ## 在 Hermes 中的可发现性
 

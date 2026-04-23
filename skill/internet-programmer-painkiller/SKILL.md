@@ -219,11 +219,27 @@ When applying this skill, respond with:
 
 ## Recommended companion artifacts
 
-- `templates/friction-log.md`
-- `templates/debugging-runbook.md`
-- `templates/golden-path-checklist.md`
-- `templates/incident-to-runbook.md`
-- `templates/ci-friction-checklist.md`
+- `references/templates/friction-log.md`
+- `references/templates/debugging-runbook.md`
+- `references/templates/golden-path-checklist.md`
+- `references/templates/incident-to-runbook.md`
+- `references/templates/ci-friction-checklist.md`
+
+## Linked files in this skill
+
+This skill ships with linked files under the skill directory so Hermes can surface them directly:
+- `references/docs/screenshots.md`
+- `references/docs/github-description.md`
+- `references/examples/example-prompts.md`
+- `references/examples/sample-output.md`
+- `references/examples/frameworks/nextjs.md`
+- `references/examples/frameworks/python-backend.md`
+- `references/examples/frameworks/ci-cd.md`
+- `references/research/sources.md`
+- `references/templates/*.md`
+- `references/assets/screenshots/*.png`
+
+Use `skill_view(name="internet-programmer-painkiller", file_path="...")` to open any of them.
 
 ## Discoverability in Hermes
 

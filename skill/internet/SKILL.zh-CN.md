@@ -100,10 +100,18 @@ metadata:
 
 ## 在 Hermes 中的可发现性
 
-如果你希望在 Hermes 中输入 `/internet` 就看到明显的技能提示，请把这个目录和 `skill/internet-programmer-painkiller/` 一起安装。
+如果你想让 `/internet` 在 Hermes 里变成一个明显的快速入口，请把这个目录和 `skill/internet-programmer-painkiller/` 一起安装。
+
+## `/internet` 的更优提示词文案
+
+适合直接输入的短提示：
+- "Use internet. Diagnose the friction, give me one shortest-path fix for today, one prevention artifact, and what to measure next."
+- "Use internet. I have a local setup problem. Classify the pain bucket, stop the guessing, and give me the fastest fix."
+- "Use internet. CI is slow and flaky. Rank the friction points and tell me the smallest high-leverage fix."
 
 ## 示例调用
 
+- "Use internet. Diagnose the friction, give me one shortest-path fix for today, one prevention artifact, and what to measure next."
 - "Use internet. 我的本地环境只能在一台机器上工作。请判断 pain buckets，并给出 shortest-path fix。"
 - "Use internet. CI 很慢而且 flaky。请按优先级列出摩擦点，并给出高杠杆修复方案。"
 - "Use internet. 我在调试时一直盲猜，因为运行时状态不清楚。请给我 immediate fix、system fix，以及下一步该测量什么。"

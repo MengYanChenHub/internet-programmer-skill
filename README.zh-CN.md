@@ -25,6 +25,8 @@
 - [这个 Skill 会做什么](#这个-skill-会做什么)
 - [快速开始](#快速开始)
 - [如何在 Hermes 中使用](#如何在-hermes-中使用)
+- [可发现性与 `/internet` 别名](#可发现性与-internet-别名)
+- [截图](#截图)
 - [框架示例](#框架示例)
 - [推荐使用流程](#推荐使用流程)
 - [示例场景](#示例场景)
@@ -102,12 +104,15 @@
 直接阅读 Skill 和模板，应用到你自己的团队流程或 Agent 工作流里。
 
 ### 方式 2：作为本地 Hermes Skill 使用
-把 skill 目录复制到 Hermes 的 skills 目录：
+把核心 Skill 和短别名一起复制到 Hermes 的 skills 目录：
 
 ```bash
 mkdir -p ~/.hermes/skills/
 cp -R skill/internet-programmer-painkiller ~/.hermes/skills/
+cp -R skill/internet ~/.hermes/skills/
 ```
+
+`internet` 这个别名不是必需的，但如果你希望在 Hermes 里输入 `/internet` 就更快看到提示，建议一起安装。
 
 然后启动 Hermes 并加载它。
 
@@ -119,14 +124,23 @@ hermes
 ```
 
 ### 2. 在会话里加载 Skill
+标准名称加载：
 ```text
 /skill internet-programmer-painkiller
 ```
+
+短别名加载：
+```text
+/skill internet
+```
+
+如果你的 Hermes 版本支持 slash suggestions，直接输入 `/internet` 通常就会把这个别名 Skill 提示出来。
 
 或者启动时预加载：
 
 ```bash
 hermes -s internet-programmer-painkiller
+hermes -s internet
 ```
 
 ### 3. 给出你的问题
@@ -158,12 +172,40 @@ Hermes 的输出最好包含：
 ```bash
 hermes skills list
 hermes -s internet-programmer-painkiller
+hermes -s internet
 ```
 
 ```text
 /skill internet-programmer-painkiller
+/skill internet
+/internet
 /help
 ```
+
+## 可发现性与 `/internet` 别名
+
+为什么要加这个别名目录？
+- 核心 Skill 名称清晰，但偏长。
+- 短别名能提升会话内的可发现性。
+- 在支持 slash suggestions 的 Hermes 构建里，`/internet` 更短、更好记。
+
+推荐方式：
+- 保留 `skill/internet-programmer-painkiller/` 作为 canonical skill。
+- 额外安装 `skill/internet/` 作为可发现性别名。
+- 如果你在团队里共享这个 Skill，最好把这两个名字都写进内部文档。
+
+## 截图
+
+下面放了 3 张真实 Hermes 使用截图，同时也可以查看 [docs/screenshots.zh-CN.md](./docs/screenshots.zh-CN.md)。
+
+### 1. 根因诊断
+![根因诊断截图](./assets/screenshots/01-diagnosis.png)
+
+### 2. 区分旧失败进程与新成功进程
+![旧失败进程与新成功进程截图](./assets/screenshots/02-old-vs-new-process.png)
+
+### 3. 修复完成并可运行
+![修复完成并可运行截图](./assets/screenshots/03-fixed-and-running.png)
 
 ## 框架示例
 
@@ -255,24 +297,47 @@ hermes -s internet-programmer-painkiller
 .
 ├── README.md
 ├── README.zh-CN.md
+├── assets/
+│   └── screenshots/
+│       ├── 01-diagnosis.png
+│       ├── 02-old-vs-new-process.png
+│       └── 03-fixed-and-running.png
+├── docs/
+│   ├── screenshots.md
+│   └── screenshots.zh-CN.md
 ├── research/
-│   └── sources.md
+│   ├── sources.md
+│   └── sources.zh-CN.md
 ├── skill/
+│   ├── internet/
+│   │   ├── SKILL.md
+│   │   └── SKILL.zh-CN.md
 │   └── internet-programmer-painkiller/
-│       └── SKILL.md
+│       ├── SKILL.md
+│       └── SKILL.zh-CN.md
 ├── templates/
 │   ├── ci-friction-checklist.md
+│   ├── ci-friction-checklist.zh-CN.md
 │   ├── debugging-runbook.md
+│   ├── debugging-runbook.zh-CN.md
 │   ├── friction-log.md
+│   ├── friction-log.zh-CN.md
 │   ├── golden-path-checklist.md
-│   └── incident-to-runbook.md
+│   ├── golden-path-checklist.zh-CN.md
+│   ├── incident-to-runbook.md
+│   └── incident-to-runbook.zh-CN.md
 └── examples/
     ├── example-prompts.md
+    ├── example-prompts.zh-CN.md
     ├── sample-output.md
+    ├── sample-output.zh-CN.md
     └── frameworks/
         ├── ci-cd.md
+        ├── ci-cd.zh-CN.md
         ├── nextjs.md
-        └── python-backend.md
+        ├── nextjs.zh-CN.md
+        ├── python-backend.md
+        └── python-backend.zh-CN.md
 ```
 
 ## 后续可扩展方向

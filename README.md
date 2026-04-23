@@ -24,6 +24,8 @@ This repository turns those pain points into a reusable operating playbook:
 - [What the skill does](#what-the-skill-does)
 - [Quick start](#quick-start)
 - [How to use this inside Hermes](#how-to-use-this-inside-hermes)
+- [Discoverability and `/internet` alias](#discoverability-and-internet-alias)
+- [Screenshots](#screenshots)
 - [Framework-specific examples](#framework-specific-examples)
 - [Recommended workflow](#recommended-workflow)
 - [Example use cases](#example-use-cases)
@@ -101,13 +103,16 @@ Pain buckets covered:
 ### Option 1: use the repo as reference only
 Read the skill and copy its workflow into your own agent or team process.
 
-### Option 2: install it as a local Hermes skill
-Copy the skill directory into your Hermes skills folder:
+### Option 2: install it as local Hermes skills
+Copy both the canonical skill and the short alias into your Hermes skills folder:
 
 ```bash
 mkdir -p ~/.hermes/skills/
 cp -R skill/internet-programmer-painkiller ~/.hermes/skills/
+cp -R skill/internet ~/.hermes/skills/
 ```
+
+The `internet` alias is optional but recommended if you want `/internet` to appear quickly in Hermes suggestions.
 
 Then start Hermes and load the skill.
 
@@ -119,14 +124,23 @@ hermes
 ```
 
 ### 2. Load the skill in a session
+Canonical load:
 ```text
 /skill internet-programmer-painkiller
 ```
+
+Short alias load:
+```text
+/skill internet
+```
+
+If your Hermes build supports slash suggestions directly, typing `/internet` should surface the alias skill immediately.
 
 Or preload it when launching Hermes:
 
 ```bash
 hermes -s internet-programmer-painkiller
+hermes -s internet
 ```
 
 ### 3. Ask for a friction diagnosis
@@ -158,12 +172,40 @@ A good response from Hermes should include:
 ```bash
 hermes skills list
 hermes -s internet-programmer-painkiller
+hermes -s internet
 ```
 
 ```text
 /skill internet-programmer-painkiller
+/skill internet
+/internet
 /help
 ```
+
+## Discoverability and `/internet` alias
+
+Why add the alias folder?
+- The canonical skill name is descriptive, but long.
+- A short alias improves in-session discoverability.
+- On Hermes builds with slash suggestions, `/internet` is easier to remember and faster to type.
+
+Recommendation:
+- Keep `skill/internet-programmer-painkiller/` as the canonical skill.
+- Also install `skill/internet/` as a thin alias for discoverability.
+- Document both names in your own team docs if you share the skill internally.
+
+## Screenshots
+
+Three real Hermes screenshots are included below and in [docs/screenshots.md](./docs/screenshots.md).
+
+### 1. Root-cause diagnosis
+![Root-cause diagnosis screenshot](./assets/screenshots/01-diagnosis.png)
+
+### 2. Distinguishing the old failed process from the new healthy one
+![Old failed process vs new healthy process screenshot](./assets/screenshots/02-old-vs-new-process.png)
+
+### 3. Verified fix and runnable result
+![Verified fix and runnable result screenshot](./assets/screenshots/03-fixed-and-running.png)
 
 ## Framework-specific examples
 
@@ -255,24 +297,47 @@ See `research/sources.md` for links and synthesis.
 .
 ├── README.md
 ├── README.zh-CN.md
+├── assets/
+│   └── screenshots/
+│       ├── 01-diagnosis.png
+│       ├── 02-old-vs-new-process.png
+│       └── 03-fixed-and-running.png
+├── docs/
+│   ├── screenshots.md
+│   └── screenshots.zh-CN.md
 ├── research/
-│   └── sources.md
+│   ├── sources.md
+│   └── sources.zh-CN.md
 ├── skill/
+│   ├── internet/
+│   │   ├── SKILL.md
+│   │   └── SKILL.zh-CN.md
 │   └── internet-programmer-painkiller/
-│       └── SKILL.md
+│       ├── SKILL.md
+│       └── SKILL.zh-CN.md
 ├── templates/
 │   ├── ci-friction-checklist.md
+│   ├── ci-friction-checklist.zh-CN.md
 │   ├── debugging-runbook.md
+│   ├── debugging-runbook.zh-CN.md
 │   ├── friction-log.md
+│   ├── friction-log.zh-CN.md
 │   ├── golden-path-checklist.md
-│   └── incident-to-runbook.md
+│   ├── golden-path-checklist.zh-CN.md
+│   ├── incident-to-runbook.md
+│   └── incident-to-runbook.zh-CN.md
 └── examples/
     ├── example-prompts.md
+    ├── example-prompts.zh-CN.md
     ├── sample-output.md
+    ├── sample-output.zh-CN.md
     └── frameworks/
         ├── ci-cd.md
+        ├── ci-cd.zh-CN.md
         ├── nextjs.md
-        └── python-backend.md
+        ├── nextjs.zh-CN.md
+        ├── python-backend.md
+        └── python-backend.zh-CN.md
 ```
 
 ## Contributing ideas

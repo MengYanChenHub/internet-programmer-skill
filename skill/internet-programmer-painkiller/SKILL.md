@@ -1,12 +1,13 @@
 ---
 name: internet-programmer-painkiller
 description: Reduce common pain points for internet programmers by diagnosing friction, shortening feedback loops, making runtime state visible, simplifying tooling, and producing concrete workflow fixes.
-version: 1.0.0
+version: 1.1.0
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
-    tags: [developer-experience, debugging, workflow, docs, focus, devops]
+    tags: [developer-experience, debugging, workflow, docs, focus, devops, internet]
+    aliases: [internet]
 ---
 
 # Internet Programmer Painkiller
@@ -224,9 +225,14 @@ When applying this skill, respond with:
 - `templates/incident-to-runbook.md`
 - `templates/ci-friction-checklist.md`
 
+## Discoverability in Hermes
+
+If you install the optional alias skill folder `skill/internet/`, typing `/internet` in Hermes can surface this skill faster in command suggestions while keeping the full canonical skill name `internet-programmer-painkiller` available.
+
 ## Example invocation
 
 Use this skill with prompts like:
 - "Use internet-programmer-painkiller. My local environment only works on one machine. Diagnose the pain buckets and give me the shortest-path fix."
+- "Use internet. My local environment only works on one machine. Diagnose the pain buckets and give me the shortest-path fix."
 - "Use internet-programmer-painkiller. CI is slow and flaky. Rank the top friction points and propose the smallest high-leverage fixes."
 - "Use internet-programmer-painkiller. I keep guessing during debugging because the runtime state is unclear. Give me the immediate fix, system fix, and what to measure."

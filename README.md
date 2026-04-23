@@ -340,15 +340,4 @@ See `research/sources.md` for links and synthesis.
         └── python-backend.zh-CN.md
 ```
 
-## Contributing ideas
 
-Useful future additions:
-- language/framework-specific variants
-- onboarding audit checklist
-- flaky-test reduction playbook
-- docs freshness automation
-- PR/review latency scorecard
-
-## License
-
-MIT
